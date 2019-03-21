@@ -1,0 +1,111 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="1176675809" file="/Users/pontus/matlab/github/projects/NETQUANT/NETQUANT.prj" location="/Users/pontus/matlab/github/projects/NETQUANT" name="NETQUANT" target="target.mlapps" target-name="Package App">
+    <param.appname>NETQUANT</param.appname>
+    <param.authnamewatermark>Pontus Nordenfelt</param.authnamewatermark>
+    <param.email>pontus.nordenfelt@med.lu.se</param.email>
+    <param.company>Lund University</param.company>
+    <param.icon />
+    <param.icons />
+    <param.summary>NETQUANT is a user-friendly fully automated software solution for identifying and quantifying neutrophils undergoing NET formation.</param.summary>
+    <param.description>See online user manual.</param.description>
+    <param.screenshot>${PROJECT_ROOT}/NQ_logo.jpg</param.screenshot>
+    <param.version>1.22</param.version>
+    <param.products.name>
+      <item>Computer Vision System Toolbox</item>
+      <item>Image Processing Toolbox</item>
+    </param.products.name>
+    <param.products.id>
+      <item>96</item>
+      <item>17</item>
+    </param.products.id>
+    <param.products.version>
+      <item>7.3</item>
+      <item>10.0</item>
+    </param.products.version>
+    <param.platforms />
+    <param.output>/Users/pontus/matlab/github/projects/NETQUANT</param.output>
+    <param.guid>ea126d19-8db9-4552-aef9-a91363f0c94d</param.guid>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.platforms />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}/NETQUANT.mlapp</file>
+    </fileset.main>
+    <fileset.depfun />
+    <fileset.resources>
+      <file>${PROJECT_ROOT}/NQ_convertImages.m</file>
+      <file>${PROJECT_ROOT}/NQ_determineThreshold.m</file>
+      <file>${PROJECT_ROOT}/NQ_displayImageData.m</file>
+      <file>${PROJECT_ROOT}/NQ_getCellProperties.m</file>
+      <file>${PROJECT_ROOT}/NQ_labelMasks.m</file>
+      <file>${PROJECT_ROOT}/NQ_loadImageInfo.m</file>
+      <file>${PROJECT_ROOT}/NQ_loadStruct.m</file>
+      <file>${PROJECT_ROOT}/NQ_outputData.m</file>
+      <file>${PROJECT_ROOT}/NQ_prepareData.m</file>
+      <file>${PROJECT_ROOT}/NQ_readImages.m</file>
+      <file>${PROJECT_ROOT}/NQ_segmentImage.m</file>
+      <file>${PROJECT_ROOT}/NQ_segmentImages.m</file>
+      <file>${PROJECT_ROOT}/bfmatlab</file>
+      <file>${PROJECT_ROOT}/io</file>
+      <file>/Users/pontus/matlab/nordenfeltLab/extern/progressbar.m</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file location="/Users/pontus/matlab/github/projects" name="NETQUANT" optional="false">/Users/pontus/matlab/github/projects/NETQUANT</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>/Applications/MATLAB_R2017a.app</root>
+      <toolboxes>
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabcoder" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="polyspacebugfinder" />
+      </toolboxes>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <polyspacebugfinder>
+          <enabled>true</enabled>
+        </polyspacebugfinder>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>true</unix>
+      <mac>true</mac>
+      <windows>false</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.13.6</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>maci64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

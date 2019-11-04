@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="4175168355" file="/Users/med-pnl/matlab/github/projects/NETQUANT/NETQUANT.prj" location="/Users/med-pnl/matlab/github/projects/NETQUANT" name="NETQUANT" target="target.mlapps" target-name="Package App">
+  <configuration build-checksum="3102742070" file="/Users/med-pnl/matlab/github/projects/NETQUANT/main functions/NETQUANT.prj" location="/Users/med-pnl/matlab/github/projects/NETQUANT/main functions" name="NETQUANT" target="target.mlapps" target-name="Package App">
     <param.appname>NETQUANT</param.appname>
     <param.authnamewatermark>Pontus Nordenfelt</param.authnamewatermark>
     <param.email>pontus.nordenfelt@med.lu.se</param.email>
@@ -9,7 +9,7 @@
     <param.summary>NETQUANT is a user-friendly fully automated software solution for identifying and quantifying neutrophils undergoing NET formation.</param.summary>
     <param.description>See online user manual.</param.description>
     <param.screenshot />
-    <param.version>1.22</param.version>
+    <param.version>1.23</param.version>
     <param.products.name>
       <item>Computer Vision System Toolbox</item>
       <item>Image Processing Toolbox</item>
@@ -37,6 +37,8 @@
     </fileset.main>
     <fileset.depfun />
     <fileset.resources>
+      <file>/Users/med-pnl/matlab/github/projects/NETQUANT/bfmatlab</file>
+      <file>${PROJECT_ROOT}/NQ_batchSegmentImages.m</file>
       <file>${PROJECT_ROOT}/NQ_convertImages.m</file>
       <file>${PROJECT_ROOT}/NQ_determineThreshold.m</file>
       <file>${PROJECT_ROOT}/NQ_displayImageData.m</file>
@@ -49,13 +51,11 @@
       <file>${PROJECT_ROOT}/NQ_readImages.m</file>
       <file>${PROJECT_ROOT}/NQ_segmentImage.m</file>
       <file>${PROJECT_ROOT}/NQ_segmentImages.m</file>
-      <file>${PROJECT_ROOT}/bfmatlab</file>
-      <file>${PROJECT_ROOT}/io</file>
-      <file>${PROJECT_ROOT}/progressbar.m</file>
+      <file>/Users/med-pnl/matlab/github/projects/NETQUANT/support functions</file>
     </fileset.resources>
     <fileset.package />
     <build-deliverables>
-      <file location="/Users/med-pnl/matlab/github/projects" name="NETQUANT" optional="false">/Users/med-pnl/matlab/github/projects/NETQUANT</file>
+      <file location="/Users/med-pnl/matlab/github/projects/NETQUANT" name="main functions" optional="false">/Users/med-pnl/matlab/github/projects/NETQUANT/main functions</file>
     </build-deliverables>
     <workflow />
     <matlab>

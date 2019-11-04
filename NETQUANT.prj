@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="3102742070" file="/Users/med-pnl/matlab/github/projects/NETQUANT/main functions/NETQUANT.prj" location="/Users/med-pnl/matlab/github/projects/NETQUANT/main functions" name="NETQUANT" target="target.mlapps" target-name="Package App">
+  <configuration build-checksum="2354180810" file="/Users/med-pnl/matlab/github/projects/NETQUANT/NETQUANT.prj" location="/Users/med-pnl/matlab/github/projects/NETQUANT" name="NETQUANT" target="target.mlapps" target-name="Package App">
     <param.appname>NETQUANT</param.appname>
     <param.authnamewatermark>Pontus Nordenfelt</param.authnamewatermark>
     <param.email>pontus.nordenfelt@med.lu.se</param.email>
@@ -37,25 +37,13 @@
     </fileset.main>
     <fileset.depfun />
     <fileset.resources>
-      <file>/Users/med-pnl/matlab/github/projects/NETQUANT/bfmatlab</file>
-      <file>${PROJECT_ROOT}/NQ_batchSegmentImages.m</file>
-      <file>${PROJECT_ROOT}/NQ_convertImages.m</file>
-      <file>${PROJECT_ROOT}/NQ_determineThreshold.m</file>
-      <file>${PROJECT_ROOT}/NQ_displayImageData.m</file>
-      <file>${PROJECT_ROOT}/NQ_getCellProperties.m</file>
-      <file>${PROJECT_ROOT}/NQ_labelMasks.m</file>
-      <file>${PROJECT_ROOT}/NQ_loadImageInfo.m</file>
-      <file>${PROJECT_ROOT}/NQ_loadStruct.m</file>
-      <file>${PROJECT_ROOT}/NQ_outputData.m</file>
-      <file>${PROJECT_ROOT}/NQ_prepareData.m</file>
-      <file>${PROJECT_ROOT}/NQ_readImages.m</file>
-      <file>${PROJECT_ROOT}/NQ_segmentImage.m</file>
-      <file>${PROJECT_ROOT}/NQ_segmentImages.m</file>
-      <file>/Users/med-pnl/matlab/github/projects/NETQUANT/support functions</file>
+      <file>${PROJECT_ROOT}/bfmatlab</file>
+      <file>${PROJECT_ROOT}/main functions</file>
+      <file>${PROJECT_ROOT}/support functions</file>
     </fileset.resources>
     <fileset.package />
     <build-deliverables>
-      <file location="/Users/med-pnl/matlab/github/projects/NETQUANT" name="main functions" optional="false">/Users/med-pnl/matlab/github/projects/NETQUANT/main functions</file>
+      <file location="/Users/med-pnl/matlab/github/projects" name="NETQUANT" optional="false">/Users/med-pnl/matlab/github/projects/NETQUANT</file>
     </build-deliverables>
     <workflow />
     <matlab>

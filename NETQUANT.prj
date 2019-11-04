@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.apptool" plugin-version="1.0">
-  <configuration build-checksum="1176675809" file="/Users/pontus/matlab/github/projects/NETQUANT/NETQUANT.prj" location="/Users/pontus/matlab/github/projects/NETQUANT" name="NETQUANT" target="target.mlapps" target-name="Package App">
+  <configuration build-checksum="4175168355" file="/Users/med-pnl/matlab/github/projects/NETQUANT/NETQUANT.prj" location="/Users/med-pnl/matlab/github/projects/NETQUANT" name="NETQUANT" target="target.mlapps" target-name="Package App">
     <param.appname>NETQUANT</param.appname>
     <param.authnamewatermark>Pontus Nordenfelt</param.authnamewatermark>
     <param.email>pontus.nordenfelt@med.lu.se</param.email>
@@ -8,7 +8,7 @@
     <param.icons />
     <param.summary>NETQUANT is a user-friendly fully automated software solution for identifying and quantifying neutrophils undergoing NET formation.</param.summary>
     <param.description>See online user manual.</param.description>
-    <param.screenshot>${PROJECT_ROOT}/NQ_logo.jpg</param.screenshot>
+    <param.screenshot>/private/var/folders/vc/f_3r_6nd4271_45mcgwrczn00000gn/T/tp30b43188_d3e0_4b1f_a9fe_11a4cb284863.png</param.screenshot>
     <param.version>1.22</param.version>
     <param.products.name>
       <item>Computer Vision System Toolbox</item>
@@ -20,10 +20,10 @@
     </param.products.id>
     <param.products.version>
       <item>7.3</item>
-      <item>10.0</item>
+      <item>10.4</item>
     </param.products.version>
     <param.platforms />
-    <param.output>/Users/pontus/matlab/github/projects/NETQUANT</param.output>
+    <param.output>${PROJECT_ROOT}</param.output>
     <param.guid>ea126d19-8db9-4552-aef9-a91363f0c94d</param.guid>
     <unset>
       <param.icon />
@@ -50,46 +50,28 @@
       <file>${PROJECT_ROOT}/NQ_segmentImages.m</file>
       <file>${PROJECT_ROOT}/bfmatlab</file>
       <file>${PROJECT_ROOT}/io</file>
-      <file>/Users/pontus/matlab/nordenfeltLab/extern/progressbar.m</file>
+      <file>${PROJECT_ROOT}/progressbar.m</file>
     </fileset.resources>
     <fileset.package />
     <build-deliverables>
-      <file location="/Users/pontus/matlab/github/projects" name="NETQUANT" optional="false">/Users/pontus/matlab/github/projects/NETQUANT</file>
+      <file location="/Users/med-pnl/matlab/github/projects" name="NETQUANT" optional="false">/Users/med-pnl/matlab/github/projects/NETQUANT</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>/Applications/MATLAB_R2017a.app</root>
+      <root>/Applications/MATLAB_R2019a.app</root>
       <toolboxes>
-        <toolbox name="fixedpoint" />
         <toolbox name="matlabcoder" />
-        <toolbox name="matlabhdlcoder" />
-        <toolbox name="embeddedcoder" />
-        <toolbox name="polyspacebugfinder" />
+        <toolbox name="neuralnetwork" />
       </toolboxes>
-      <toolbox>
-        <fixedpoint>
-          <enabled>true</enabled>
-        </fixedpoint>
-      </toolbox>
       <toolbox>
         <matlabcoder>
           <enabled>true</enabled>
         </matlabcoder>
       </toolbox>
       <toolbox>
-        <matlabhdlcoder>
+        <neuralnetwork>
           <enabled>true</enabled>
-        </matlabhdlcoder>
-      </toolbox>
-      <toolbox>
-        <embeddedcoder>
-          <enabled>true</enabled>
-        </embeddedcoder>
-      </toolbox>
-      <toolbox>
-        <polyspacebugfinder>
-          <enabled>true</enabled>
-        </polyspacebugfinder>
+        </neuralnetwork>
       </toolbox>
     </matlab>
     <platform>
@@ -101,7 +83,7 @@
       <vista>false</vista>
       <linux>false</linux>
       <solaris>false</solaris>
-      <osver>10.13.6</osver>
+      <osver>10.15</osver>
       <os32>false</os32>
       <os64>true</os64>
       <arch>maci64</arch>

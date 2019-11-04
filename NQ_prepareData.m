@@ -13,9 +13,9 @@ function [] = NQ_prepareData (folder, targetDir, paramsIn,  varargin)
 %% inputs
 ip = inputParser;
 
-ip.addParamValue ('preview', false, @islogical);
-ip.addParamValue ('type', 'stack', @ischar); %stack or separate
-ip.addParamValue ('extension','.nd2', @ischar);
+ip.addParameter ('preview', false, @islogical);
+ip.addParameter ('type', 'stack', @ischar); %stack or separate
+ip.addParameter ('extension','.nd2', @ischar);
 ip.parse (varargin{:});
 inputs = ip.Results;
 
@@ -83,17 +83,7 @@ if inputs.preview == false
                             mkdir(destination);
                         end
                         
-                        
-                        %                     targetPath{im+1} = [targetDir filesep foldernames{i} filesep filenameList{j} filesep saveFolders{2} filesep filenameList{j}];
-                        %
-                        %                     %check if folder exists otherwise make it
-                        %
-                        %                         destination = fileparts(targetPath{im+1});
-                        %
-                        %                         if ~exist(destination,'dir')
-                        %                             mkdir(destination);
-                        %                         end
-                        %
+                       
                         
                         im = im +1;
                         
@@ -116,52 +106,7 @@ if inputs.preview == false
             
             
             
-            %end
-            
-            %end
-            
-            %waitbar(i/numel(foldernames));
-            %end
-            %             %get original filenames
-            %             for i=1:numel(foldernames)
-            %
-            %                 for k=1:numel(channels)
-            %                     %get original image filenames
-            %                     filenames = getAllFileNames([folder filesep foldernames{i} filesep channels{k}],...
-            %                         p.extension);
-            %                     %get full path of images
-            %                     filePath = getAllFilePaths([folder filesep foldernames{i} filesep channels{k}],...
-            %                         p.extension);
-            %
-            %                     for j=1:numel(filenames)
-            %                         %specify save path
-            %                         destination=[targetDir filesep foldernames{i} filesep filenames{j} filesep saveFolders{k}];
-            %
-            %                         if ~exist(destination,'dir')
-            %                             mkdir(destination);
-            %                         end
-            %                         %pre-allocate with save path
-            %                         targetPath = repmat({destination},length(filePath),1);
-            %
-            %                         %list all original image names with full destination path
-            %                         for im = 1:numel(filenames)
-            %                             targetPath{im} = [targetPath{im} filesep filenames{im}];
-            %                         end
-            %
-            %                         %copy the original images to results folder
-            %                         cellfun(@copyfile,filePath,targetPath);
-            %
-            %                         %store parameter information to result folder
-            %                         metadata = p;
-            %                         metadata.flags.NQ_prepareData = 1; %set flags
-            %                         save([targetDir filesep foldernames{i} filesep filenames{j} filesep 'NQ_metadata.mat'],'metadata'); %save file
-            %
-            %                     end
-            %
-            %                 end
-            %
-            %                     %waitbar(i/numel(foldernames));
-            %             end
+           
             
         case 'stack'
             
@@ -178,9 +123,19 @@ if inputs.preview == false
                 %remove extension
                 %foldernames = cellfun(@(x) x(1:end-length(inputs.extension)),filenames,'UniformOutput',false);
                 
-                channels={...
-                    p.nucleiName,...
-                    p.netName};
+                
+                %set correct order of input channels
+                
+                if p.invertChannels == true
+                    channels={...
+                        p.netName,...
+                        p.nucleiName};
+                else
+                    channels={...
+                        p.nucleiName,...
+                        p.netName};
+                end
+                
                 
                 
                 for iFile = 1:numel(filenames)
@@ -201,14 +156,15 @@ if inputs.preview == false
                     
                     p.nChan     = omeMeta.getPixelsSizeC(0).getValue(); % channels
                     p.nTime     = omeMeta.getPixelsSizeT(0).getValue(); % time points / positions
-                    %p.nPlane    = omeMeta.getPixelsSizeZ(0).getValue(); %
-                    %z planes are not supported
+                    %p.nPlane    = omeMeta.getPixelsSizeZ(0).getValue(); %z planes are not supported
                     
                     %determine images in whole stack
                     nIm = p.nTime*p.nChan;
                     
                     
+                    
                     for iChan = 1:p.nChan
+                        
                         
                         %create output directories
                         outDir = [targetDir filesep foldernames{iFolder} filesep filenames{iFile} filesep 'raw_images' filesep (channels{iChan})];
@@ -219,6 +175,8 @@ if inputs.preview == false
                         name = filenames{iFile}(1:end-length(inputs.extension));
                         
                         iTime=1;
+                        
+                        
                         for iIm = iChan:p.nChan:nIm
                             
                             bfsave(imData{1,1}{iIm,1},[outDir filesep name '_'...

@@ -8,7 +8,7 @@
     <param.icons />
     <param.summary>NETQUANT is a user-friendly fully automated software solution for identifying and quantifying neutrophils undergoing NET formation.</param.summary>
     <param.description>See online user manual.</param.description>
-    <param.screenshot>/private/var/folders/vc/f_3r_6nd4271_45mcgwrczn00000gn/T/tp30b43188_d3e0_4b1f_a9fe_11a4cb284863.png</param.screenshot>
+    <param.screenshot />
     <param.version>1.22</param.version>
     <param.products.name>
       <item>Computer Vision System Toolbox</item>
@@ -28,6 +28,7 @@
     <unset>
       <param.icon />
       <param.icons />
+      <param.screenshot />
       <param.platforms />
       <param.output />
     </unset>
@@ -83,7 +84,7 @@
       <vista>false</vista>
       <linux>false</linux>
       <solaris>false</solaris>
-      <osver>10.15</osver>
+      <osver>10.15.1</osver>
       <os32>false</os32>
       <os64>true</os64>
       <arch>maci64</arch>

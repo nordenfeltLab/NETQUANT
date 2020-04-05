@@ -28,9 +28,6 @@ switch method
         mask = imbinarize(im);
         
         
-
-
-
     case 'edge'
         % Initialize segmentation with Otsu's threshold
         mask = imbinarize(im);

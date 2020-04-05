@@ -188,9 +188,9 @@ else
     
     %get image name and fill a vector with the length of number of cells
     [~, fileName, ] = fileparts(expFolder);
-    %imageName = repmat(fileName,[1 length(pairs2)]);
-    imageName = cell(length(idx1),1);
-    imageName(:) = {fileName};
+    imageName = repmat(fileName,[1 length(pairs2)]);
+    C    = cell(length(idx1),1);
+    C(:) = {imageName};
     
     
     %create table of stats

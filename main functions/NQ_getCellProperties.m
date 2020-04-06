@@ -92,7 +92,7 @@ else
     L2(~ismember(L2,ind2))=0;
     
     %optional exclusion of areas covering multiple cells
-    if p.combineConnected == 1
+    if p.combineConnected == 1 && length(pairs(:,1))>1
         p1 = pairs(:,1);
         u2 = double(unique(p1));
         count = hist(p1,u2); %nr of repeated elements
@@ -139,7 +139,7 @@ else
     
     
     %loop through all pairs and set stats
-    for iCell = 1:length(pairs2)
+    for iCell = 1:length(pairs2(:,1))
         for iStats = 1:length(statsList)-3 %skip centroids and boundingbox
             stats.(statsList{iStats})(iCell,1) = s(pairs2(iCell,1)).(statsList{iStats});
             stats.(statsList{iStats})(iCell,2) = s2(pairs2(iCell,2)).(statsList{iStats});

@@ -71,6 +71,9 @@ else
         positiveCells(iCell) = netcell;
     end
     
+    [~, fileName, ] = fileparts(expFolder);
+    data.imageName = fileName;
+    
     data.area = cellStats.Area;
     data.cellNr = cellStats.CellNr;
     data.table=analysis.table.all;

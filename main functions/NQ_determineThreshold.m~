@@ -34,7 +34,7 @@ for iSample = 1:numel(sampleFolders)
         [~, analysis] = NQ_loadStruct(sampleFolders{iSample},'analysis');
         
         if isnumeric(analysis) %avoid errors with empty samples
-            disp (['no analysis found, exluding data for image' sampleNames{iSample}]);
+            disp (['no analysis found, exluding data for image' sampleNames{iSample} !'];
         else
             t=analysis.table.all;
             T = [T; t];
@@ -64,8 +64,6 @@ threshold.stdNetSize = std(T.netArea);
 threshold.stdRatioArea = std(T.ratioArea);
 threshold.stdNucleiCircularity = std(T.dnaCircularity);
 
-%cell count
-threshold.cellcount = size(T,1);
 
 %Create string for current directory
 currDir = [folderPath filesep dName];

@@ -71,12 +71,17 @@ else
         positiveCells(iCell) = netcell;
     end
     
+    %add NET-positive cells
+    T=analysis.table.all;
+    T2=addvars(T,transpose(positiveCells),'After','cellNr', 'NewVariableNames','NETpositive');
+    
+    %add image name
     [~, fileName, ] = fileparts(expFolder);
     data.imageName = fileName;
     
     data.area = cellStats.Area;
     data.cellNr = cellStats.CellNr;
-    data.table=analysis.table.all;
+    data.table=T2;
     data.netID = netID;
     
     %select output data

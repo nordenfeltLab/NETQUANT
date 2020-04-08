@@ -95,23 +95,27 @@ else
     if p.combineConnected == 1 && length(pairs(:,1))>1
         p1 = pairs(:,1);
         u2 = double(unique(p1));
-        count = hist(p1,u2); %nr of repeated elements
-        dup1=find(count>1); %get repeated elements
-        for iInd = 1:numel(dup1)
-            x = u2(dup1(iInd)); %repeated label
-            pos = find(p1==x); %pos of repeated label
+        try
+            count = hist(p1,u2); %nr of repeated elements
             
-            for iCount = 1:numel(pos)-1
-                label1 =pairs(pos(iCount),2);
-                if iCount>1
-                    label1=newlabel; %fix for multiple adjoining sections
+            dup1=find(count>1); %get repeated elements
+            for iInd = 1:numel(dup1)
+                x = u2(dup1(iInd)); %repeated label
+                pos = find(p1==x); %pos of repeated label
+                
+                for iCount = 1:numel(pos)-1
+                    label1 =pairs(pos(iCount),2);
+                    if iCount>1
+                        label1=newlabel; %fix for multiple adjoining sections
+                    end
+                    label2 =pairs(pos(iCount+1),2);
+                    newlabel=label1;
+                    L2(L2==label2)=newlabel; %relabel to combine area
                 end
-                label2 =pairs(pos(iCount+1),2);
-                newlabel=label1;
-                L2(L2==label2)=newlabel; %relabel to combine area
             end
+        catch
+            disp ('too few objects for combining cells');
         end
-        
     end
     
     %smooth and fill gaps

@@ -66,11 +66,12 @@ for iFolder = 1:length(expFolders)
                         currIm = rgb2gray(currIm);
                     end
                     
-                    %convert to correct bit depth
-                    maxBit1 = (2^16)-1;
-                    maxBit2 = (2^p.bitDepth)-1;
-                    currIm = uint16((maxBit1/maxBit2)*(double(currIm)));
-                    
+                    %temporary fix
+%                     %convert to correct bit depth
+%                     maxBit1 = (2^16)-1;
+%                     maxBit2 = (2^p.bitDepth)-1;
+%                     currIm = uint16((maxBit1/maxBit2)*(double(currIm)));
+%                     
                     %store in structure
                     myImages(:,:,iImage) = currIm;
                     
